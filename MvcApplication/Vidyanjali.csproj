@@ -1,0 +1,1226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A4380BE-C2C5-4BEB-B2F6-E0964FB94D2E}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vidyanjali</RootNamespace>
+    <AssemblyName>Vidyanjali</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActionMailer.Net, Version=0.7.4.0, Culture=neutral, PublicKeyToken=e62db3114c02a1c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\ActionMailer.0.7.4\lib\Net40\ActionMailer.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ActionMailer.Net.Mvc, Version=0.7.4.0, Culture=neutral, PublicKeyToken=e62db3114c02a1c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\ActionMailer.0.7.4\lib\Net40\ActionMailer.Net.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DropDownList_Optgroup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DropDownList.Optgroup.MVC.1.0.0\lib\net40\DropDownList_Optgroup.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MCPG.CCA.Util">
+      <HintPath>..\libs\MCPG.CCA.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz, Version=2.2.3.400, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.2.3\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Simple.ImageResizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Simple.ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System-Web-Helpers.dll.1.0.1\lib\Net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System-Web-Helpers.dll.1.0.1\lib\Net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminAccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CommonController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\AdmissionController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\BugleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\BlogController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\SpotlightController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\TeamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\FAQController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\GalleryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\TestimonialController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Topic\WebPageController.cs" />
+    <Compile Include="Areas\Admin\Helpers\GeneralHelper.cs" />
+    <Compile Include="Areas\Admin\Helpers\GroupedSelectExtensions.cs" />
+    <Compile Include="Areas\Admin\Helpers\Interfaces\IData.cs" />
+    <Compile Include="Areas\Admin\Helpers\Utilities.cs" />
+    <Compile Include="Areas\Admin\Models\Seo\SeoModel.cs" />
+    <Compile Include="Areas\Admin\Models\Stakeholder\AdminUser.cs" />
+    <Compile Include="Areas\Admin\Models\Stakeholder\Role.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\Admission.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\Blog.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\Bugle.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\Spotlight.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\Team.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\Gallery.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\Testimonials.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\FAQ.cs" />
+    <Compile Include="Areas\Admin\Models\Topic\WebPage.cs" />
+    <Compile Include="Areas\EMS\Controllers\EnquiryController.cs" />
+    <Compile Include="Areas\EMS\EMSAreaRegistration.cs" />
+    <Compile Include="Areas\EMS\Models\Enquiry.cs" />
+    <Compile Include="Areas\EMS\Models\UserTrackingActionFilterAttribute.cs" />
+    <Compile Include="Areas\EMS\Models\Visitor.cs" />
+    <Compile Include="Areas\FileManagement\Controllers\ImageManagerController.cs" />
+    <Compile Include="Areas\FileManagement\FileManagementAreaRegistration.cs" />
+    <Compile Include="Areas\FileManagement\Models\IFile.cs" />
+    <Compile Include="Areas\FileManagement\Models\ImageFile.cs" />
+    <Compile Include="Comman\Extension.cs" />
+    <Content Include="Content\Public\css\custom.css" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\DropdownHelper.cs" />
+    <Compile Include="Helper\Home.cs" />
+    <Compile Include="Helper\Utilities.cs" />
+    <Compile Include="Models\CoreContext.cs" />
+    <Compile Include="Models\SeedData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Areas\Admin\Content\chosen\chosen-sprite%402x.png" />
+    <Content Include="Areas\Admin\Content\chosen\chosen-sprite.png" />
+    <Content Include="Areas\Admin\Content\chosen\chosen.jquery.min.js" />
+    <Content Include="Areas\Admin\Content\chosen\chosen.min.css" />
+    <Content Include="Areas\Admin\Content\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Content\css\google-like-buttons.css" />
+    <Content Include="Areas\Admin\Content\css\images\google-colour.png" />
+    <Content Include="Areas\Admin\Content\css\images\google-sprite-gray.png" />
+    <Content Include="Areas\Admin\Content\css\images\loading.gif" />
+    <Content Include="Areas\Admin\Content\css\images\sprite.png" />
+    <Content Include="Areas\Admin\Content\css\jquery.fancybox.css" />
+    <Content Include="Areas\Admin\Content\css\jquery.ui.css" />
+    <Content Include="Areas\Admin\Content\css\Overwrite.css" />
+    <Content Include="Areas\Admin\Content\css\style.css" />
+    <Content Include="Areas\Admin\Content\datatables\css\admin.css" />
+    <Content Include="Areas\Admin\Content\datatables\css\ColVis.css" />
+    <Content Include="Areas\Admin\Content\datatables\images\divider.png" />
+    <Content Include="Areas\Admin\Content\datatables\js\ColReorder.min.js" />
+    <Content Include="Areas\Admin\Content\datatables\js\ColVis.js" />
+    <Content Include="Areas\Admin\Content\datatables\js\TableTools.min.js" />
+    <Content Include="Areas\Admin\Content\datatables\js\ZeroClipboard.js" />
+    <Content Include="Areas\Admin\Content\datatables\media\copy_csv_xls.swf" />
+    <Content Include="Areas\Admin\Content\datatables\media\copy_csv_xls_pdf.swf" />
+    <Content Include="Areas\Admin\Content\editors\jquery-tinyMce.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\changelog.txt" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\langs\en.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\license.txt" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advhr\css\advhr.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advhr\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advhr\js\rule.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advhr\rule.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advimage\css\advimage.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advimage\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advimage\image.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advimage\img\sample.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advimage\js\image.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advlink\css\advlink.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advlink\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advlink\js\advlink.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advlink\link.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advlist\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\autolink\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\autosave\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\directionality\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\emotions.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\js\emotions.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example\dialog.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example\img\example.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example\js\dialog.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example\langs\en.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullpage\fullpage.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\iespell\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\inlinepopups\template.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\layer\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\lists\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\media\css\media.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\media\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\media\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\media\js\embed.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\media\js\media.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\media\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\media\media.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\media\moxieplayer.swf" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\paste\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\paste\js\pastetext.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\paste\js\pasteword.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\paste\pastetext.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\paste\pasteword.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\pdw\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\pdw\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\pdw\img\toolbars.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\pdw\langs\de.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\pdw\langs\en.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\preview\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\preview\example.html" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\preview\jscripts\embed.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\preview\preview.html" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\print\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\print\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\save\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\save\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\spellchecker\css\content.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\style\css\props.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\style\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\style\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\style\js\props.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\style\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\style\props.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\style\readme.txt" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\cell.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\css\cell.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\css\row.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\css\table.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\js\cell.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\js\merge_cells.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\js\row.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\js\table.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\merge_cells.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\row.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\table\table.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\template\blank.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\template\css\template.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\template\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\template\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\template\js\template.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\template\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\template\template.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\about.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\anchor.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\charmap.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\color_picker.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\editor_template.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\editor_template_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\image.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\flash.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\icons.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\iframe.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\quicktime.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\realmedia.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\shockwave.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\trans.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\video.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\js\about.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\js\anchor.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\js\charmap.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\js\color_picker.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\js\image.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\js\link.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\js\source_editor.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\langs\en.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\link.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\shortcuts.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\content.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\ui.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\advanced\source_editor.htm" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\editor_template.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\editor_template_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\img\icons.gif" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\langs\en.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\skins\default\content.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\skins\default\ui.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\tiny_mce.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\tiny_mce_popup.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\tiny_mce_src.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\utils\editable_selects.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\utils\form_utils.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\utils\mctabs.js" />
+    <Content Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\utils\validate.js" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Content\images\arrow.png" />
+    <Content Include="Areas\Admin\Content\images\body-bg.png" />
+    <Content Include="Areas\Admin\Content\images\darkdenim3.png" />
+    <Content Include="Areas\Admin\Content\images\dark_leather.png" />
+    <Content Include="Areas\Admin\Content\images\details_close.png" />
+    <Content Include="Areas\Admin\Content\images\details_open.png" />
+    <Content Include="Areas\Admin\Content\images\fancybox_loading%402x.gif" />
+    <Content Include="Areas\Admin\Content\images\fancybox_loading.gif" />
+    <Content Include="Areas\Admin\Content\images\fancybox_sprite%402x.png" />
+    <Content Include="Areas\Admin\Content\images\fancybox_sprite.png" />
+    <Content Include="Areas\Admin\Content\images\logo_iis.png" />
+    <Content Include="Areas\Admin\Content\images\menu-sprite.png" />
+    <Content Include="Areas\Admin\Content\js\admin.js" />
+    <Content Include="Areas\Admin\Content\js\comman-form.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-1.9.0.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-tinyMce.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui-timepicker-addon.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.fancybox.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.hoverIntent.minified.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.validate.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\changelog.txt" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\accessibility.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\css\content.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\css\word.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\custom_formats.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\full.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\index.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\lists\image_list.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\lists\link_list.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\lists\media_list.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\lists\template_list.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\logo.jpg" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\logo_over.jpg" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\sample.avi" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\sample.mov" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\sample.swf" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\menu.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\simple.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\skins.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\templates\layout1.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\templates\snippet1.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\word.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\langs\en.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\license.txt" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advhr\css\advhr.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advhr\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advhr\js\rule.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advhr\rule.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advimage\css\advimage.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advimage\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advimage\image.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advimage\img\sample.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advimage\js\image.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advlink\css\advlink.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advlink\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advlink\js\advlink.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advlink\link.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advlist\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\autolink\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\autosave\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\directionality\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\emotions.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\js\emotions.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example\dialog.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example\img\example.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example\js\dialog.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example\langs\en.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullpage\fullpage.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\iespell\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\inlinepopups\template.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\layer\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\lists\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\media\css\media.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\media\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\media\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\media\js\embed.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\media\js\media.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\media\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\media\media.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\media\moxieplayer.swf" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\paste\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\paste\js\pastetext.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\paste\js\pasteword.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\paste\pastetext.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\paste\pasteword.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\preview\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\preview\example.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\preview\jscripts\embed.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\preview\preview.html" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\print\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\print\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\save\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\save\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\spellchecker\css\content.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\style\css\props.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\style\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\style\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\style\js\props.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\style\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\style\props.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\style\readme.txt" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\cell.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\css\cell.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\css\row.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\css\table.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\js\cell.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\js\merge_cells.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\js\row.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\js\table.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\merge_cells.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\row.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\table\table.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\template\blank.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\template\css\template.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\template\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\template\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\template\js\template.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\template\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\template\template.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\about.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\anchor.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\charmap.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\color_picker.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\editor_template.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\editor_template_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\image.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\flash.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\icons.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\iframe.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\quicktime.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\realmedia.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\shockwave.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\trans.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\video.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\js\about.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\js\anchor.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\js\charmap.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\js\color_picker.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\js\image.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\js\link.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\js\source_editor.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\langs\en.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\link.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\shortcuts.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\content.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\ui.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\advanced\source_editor.htm" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\editor_template.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\editor_template_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\img\icons.gif" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\langs\en.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\skins\default\content.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\skins\default\ui.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\tiny_mce.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\tiny_mce_popup.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\tiny_mce_src.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\utils\editable_selects.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\utils\form_utils.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\utils\mctabs.js" />
+    <Content Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\utils\validate.js" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\buttonbg.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\icon_color_arrow.gif" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\menuhoverbg.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_black_matte.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_black_tie.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_blitzer.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_cupertino.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_dark_hive.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_dot_luv.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_eggplant.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_excite_bike.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_flick.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_hot_sneaks.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_humanity.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_le_frog.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_mint_choco.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_overcast.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_pepper_grinder.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_smoothness.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_south_street.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_start_menu.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_sunny.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_swanky_purse.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_trontastic.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_ui_dark.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_ui_light.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\images\theme_90_windoze.png" />
+    <Content Include="Areas\Admin\Content\tswitcher\jquery.themeswitcher.min.js" />
+    <Content Include="Areas\FileManagement\Content\jCrop\Jcrop.gif" />
+    <Content Include="Areas\FileManagement\Content\jCrop\jquery.color.js" />
+    <Content Include="Areas\FileManagement\Content\jCrop\jquery.Jcrop.css" />
+    <Content Include="Areas\FileManagement\Content\jCrop\jquery.Jcrop.js" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\files.js" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_avi.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_doc.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_docx.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_flv.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_mov.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_odp.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_ods.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_odt.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_pdf.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_ppt.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_pptx.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_ram.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_swf.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_wma.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_wmv.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_xls.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_xlsx.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\icons\filetype_zip.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\Jcrop.gif" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\jquery.Jcrop.css" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\jquery.Jcrop.js" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\jquery.pinbox.js" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\jquery.uploadify.js" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\uploadify-cancel.png" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\uploadify.css" />
+    <Content Include="Areas\FileManagement\Content\Uploadify\uploadify.swf" />
+    <Content Include="Areas\FileManagement\Xml\FileConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\FileManagement\Xml\Files.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Public\css\animate.css" />
+    <Content Include="Content\Public\css\bootstrap.css" />
+    <Content Include="Content\Public\css\bootstrap.min.css" />
+    <Content Include="Content\Public\css\custom_Old.css" />
+    <Content Include="Content\Public\css\jquery.smartmenus.bootstrap-4.css" />
+    <Content Include="Content\Public\css\sm-core-css.css" />
+    <Content Include="Content\Public\images\Close.png" />
+    <Content Include="Content\Public\images\Temp\Vidyanjali Academy for Learning.mp4" />
+    <Content Include="Content\Public\images\We are Hiring Flyer.jpg" />
+    <Content Include="Content\Public\js\bootstrap.bundle.js" />
+    <Content Include="Content\Public\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\Public\js\bootstrap.js" />
+    <Content Include="Content\Public\js\bootstrap.min.js" />
+    <Content Include="Content\Public\js\custom.js" />
+    <Content Include="Content\Public\js\expanding.js" />
+    <Content Include="Content\Public\js\jquery-3.6.0.min.js" />
+    <Content Include="Content\Public\js\jquery.smartmenus.bootstrap-4.js" />
+    <Content Include="Content\Public\js\jquery.smartmenus.min.js" />
+    <Content Include="Content\Public\js\jquery.zeynep.min.js" />
+    <Content Include="Content\Public\Videos\V_creativity.mp4" />
+    <Content Include="Content\Public\Videos\V_dussehra.mp4" />
+    <Content Include="Content\Public\Videos\V_Montessori Environment.mp4" />
+    <Content Include="Content\Public\Videos\V_Vidyanjali Academy for Learning.mp4" />
+    <Content Include="Content\Uploads\ContentImage\13\our-team.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\sample.dcr" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\sample.flv" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\sample.ram" />
+    <Content Include="Areas\Admin\Content\js\tinymce\examples\media\sample.rm" />
+    <Content Include="Areas\EMS\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_MainMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\WebPage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\WebPage\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\WebPage\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\WebPage\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\WebPage\Delete.cshtml" />
+    <Content Include="Areas\FileManagement\Views\Web.config" />
+    <Content Include="Areas\FileManagement\Views\ImageManager\FileManager.cshtml" />
+    <Content Include="Areas\FileManagement\Views\ImageManager\UploadFile.cshtml" />
+    <Content Include="Areas\FileManagement\Views\Shared\_EditFileInfo.cshtml" />
+    <Content Include="Areas\FileManagement\Views\Shared\_ImageFileList.cshtml" />
+    <Content Include="Areas\FileManagement\Views\Shared\_ImageLibrary.cshtml" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Content\fonts\FontAwesome.otf" />
+    <Content Include="Areas\EMS\Views\Enquiry\Index.cshtml" />
+    <Content Include="Areas\EMS\Views\Enquiry\Details.cshtml" />
+    <Content Include="Areas\EMS\Views\Enquiry\Create.cshtml" />
+    <Content Include="Areas\EMS\Views\Enquiry\Edit.cshtml" />
+    <Content Include="Areas\EMS\Views\Enquiry\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Team\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Team\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Team\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\FAQ\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FAQ\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\FAQ\Edit.cshtml" />
+    <Content Include="Content\Public\fonts\Maiandra_GD.ttf" />
+    <Content Include="Content\Public\fonts\Maiandra_GD_Demi_Bold.ttf" />
+    <Content Include="Content\Public\fonts\Maiandra_GD_Italic.ttf" />
+    <Content Include="Content\Public\fonts\OpenSans-Bold.ttf" />
+    <Content Include="Content\Public\fonts\OpenSans-Light.ttf" />
+    <Content Include="Content\Public\fonts\OpenSans-Semibold.ttf" />
+    <Content Include="Content\Public\fonts\OpenSansRegular.ttf" />
+    <Content Include="Content\Public\pdf\admission-2021-22.pdf" />
+    <Content Include="Content\Public\pdf\Annual-Calendar-21-22.pdf" />
+    <Content Include="Content\Public\pdf\Building-Fittness-Certificate.pdf" />
+    <Content Include="Content\Public\pdf\CBSE-affiliation-1.pdf" />
+    <Content Include="Content\Public\pdf\CBSE-affiliation-3.pdf" />
+    <Content Include="Content\Public\pdf\Fee-Structure-2021-22-1.pdf" />
+    <Content Include="Content\Public\pdf\Fire-Safety-Certificate.pdf" />
+    <Content Include="Content\Public\pdf\NOC.pdf" />
+    <Content Include="Content\Public\pdf\sports.pdf" />
+    <Content Include="Content\Public\pdf\Trust-Deed.pdf" />
+    <Content Include="Content\Public\pdf\water-certificate.pdf" />
+    <Content Include="Content\Public\images\Vidyanjali_Logo.webp" />
+    <Content Include="Content\Uploads\Banner\1\Vidyanjali_Banner-1.webp" />
+    <Content Include="Content\Uploads\Banner\1\Vidyanjali_Banner-2.webp" />
+    <Content Include="Content\Uploads\Banner\1\Vidyanjali_Banner-3.webp" />
+    <Content Include="Content\Uploads\Banner\1\Vidyanjali_Banner-4.webp" />
+    <Content Include="Content\Uploads\Banner\1\Vidyanjali_Banner-5.webp" />
+    <Content Include="Content\Public\images\Vidyanjali_Location.webp" />
+    <Content Include="Content\Public\images\arrow.webp" />
+    <Content Include="Content\Public\images\Vidyanjali_Footer-final.webp" />
+    <Content Include="Content\Public\images\Vidyanjali_Map.webp" />
+    <Content Include="Content\Public\images\More-1.webp" />
+    <Content Include="Content\Public\images\More-2.webp" />
+    <Content Include="Areas\Admin\Views\AdminAccount\LogOn.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\UserManual.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Account\_LogOn.cshtml" />
+    <Content Include="Content\Public\images\Pre-primary Montessori-1.webp" />
+    <Content Include="Content\Public\images\Vidyanjali_Top-1.webp" />
+    <Content Include="Content\Public\images\Excercises of Practical Life.webp" />
+    <Content Include="Content\Uploads\ContentImage\21\Exceptional Educators-inner.webp" />
+    <Content Include="Content\Uploads\ContentImage\22\Emotional Counselling.webp" />
+    <Content Include="Content\Public\images\Mentorship.webp" />
+    <Content Include="Content\Public\images\Fees - Profile Download.webp" />
+    <Content Include="Content\Public\images\Playground.webp" />
+    <Content Include="Content\Uploads\ContentImage\28\Pre-primary Montessori %282%29.webp" />
+    <Content Include="Content\Public\images\The Sensorial.webp" />
+    <Content Include="Content\Public\images\Arithmetic.webp" />
+    <Content Include="Content\Public\images\Language.webp" />
+    <Content Include="Content\Public\images\Cultural Activities.webp" />
+    <Content Include="Content\Public\images\Primary Montessori-2.webp" />
+    <Content Include="Content\Public\images\Pre-primary Montessori %282%29.webp" />
+    <Content Include="Content\Uploads\ContentImage\32\Primary- Montessori .webp" />
+    <Content Include="Content\Uploads\ContentImage\33\Prep II  III %282%29.webp" />
+    <Content Include="Content\Uploads\ContentImage\34\CBSE I to VIII-inner.webp" />
+    <Content Include="Content\Uploads\ContentImage\35\CBSE IX  X-inner.webp" />
+    <Content Include="Content\Public\images\Distinction.webp" />
+    <Content Include="Content\Public\images\First Class.webp" />
+    <Content Include="Content\Public\images\Results .webp" />
+    <Content Include="Content\Public\images\Economic.webp" />
+    <Content Include="Content\Public\images\Environmental.webp" />
+    <Content Include="Content\Public\images\Social.webp" />
+    <Content Include="Content\Public\images\Yoga.webp" />
+    <Content Include="Content\Public\images\Karate.webp" />
+    <Content Include="Content\Public\images\Dance.webp" />
+    <Content Include="Content\Public\images\Music.webp" />
+    <Content Include="Content\Public\images\Chess.webp" />
+    <Content Include="Content\Public\images\I.webp" />
+    <Content Include="Content\Public\images\Rhetorics Gavel Club.webp" />
+    <Content Include="Content\Public\images\PBIS.webp" />
+    <Content Include="Content\Public\images\Creya.webp" />
+    <Content Include="Content\Public\images\Internship Program.webp" />
+    <Content Include="Content\Public\images\Sports Club.webp" />
+    <Content Include="Content\Public\images\Tight Knit Community.webp" />
+    <Content Include="Content\Public\images\Holistic Character Development.webp" />
+    <Content Include="Content\Public\images\Exceptional Educators.webp" />
+    <Content Include="Content\Public\images\Safety.webp" />
+    <Content Include="Content\Public\images\Academic Excellence.webp" />
+    <Content Include="Content\Public\images\Growth Mind Set.webp" />
+    <Content Include="Content\Public\images\School Cinema Life Skill Program.webp" />
+    <Content Include="Content\Public\images\Vision.webp" />
+    <Content Include="Content\Public\images\Mission.webp" />
+    <Content Include="Content\Public\images\Aim.webp" />
+    <Content Include="Content\Public\images\Core Values.webp" />
+    <Content Include="Content\Public\images\Q-1.webp" />
+    <Content Include="Content\Public\images\Q-2.webp" />
+    <Content Include="Content\Public\images\Temp\More-1.webp" />
+    <Content Include="Content\Public\images\Temp\More-2.webp" />
+    <Content Include="Content\Public\images\Temp\Primary- Montessori .webp" />
+    <Content Include="Content\Public\images\Temp\Prep II &amp; III-1.webp" />
+    <Content Include="Content\Public\images\Temp\Alliances_Affiliations.webp" />
+    <Content Include="Content\Public\images\Temp\Vidyanjali_Testimonial-1.webp" />
+    <Content Include="Content\Public\images\Temp\SpotLight-1.webp" />
+    <Content Include="Content\Public\images\Temp\Teaching experience.webp" />
+    <Content Include="Content\Public\images\Temp\Teachers_are_Trained.webp" />
+    <Content Include="Content\Public\images\Temp\Masters’ Degree.webp" />
+    <Content Include="Content\Public\images\Temp\Growth Mind Set.webp" />
+    <Content Include="Content\Public\images\Temp\Academic Excellence-H.webp" />
+    <Content Include="Content\Public\images\Temp\Safety.webp" />
+    <Content Include="Content\Public\images\Temp\Exceptional Educators.webp" />
+    <Content Include="Content\Public\images\Temp\Holistic_Character_Development.webp" />
+    <Content Include="Content\Public\images\Temp\Tight Knit Community.webp" />
+    <Content Include="Content\Public\images\Temp\CBSE IX &amp; X.webp" />
+    <Content Include="Content\Public\images\Temp\CBSE I to VIII.webp" />
+    <Content Include="Content\Uploads\ContentImage\10\Dr Rekha Reddy.webp" />
+    <Content Include="Content\Public\images\School Building.webp" />
+    <Content Include="Content\Public\images\Auditorium.webp" />
+    <Content Include="Content\Public\images\Supporting Staff.webp" />
+    <Content Include="Content\Uploads\ContentImage\14\Sri Ramaiah Reddy.webp" />
+    <Content Include="Areas\Admin\Views\Spotlight\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Spotlight\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Spotlight\Index.cshtml" />
+    <Content Include="Content\Uploads\ContentImage\20\Parent Empowerment Day.webp" />
+    <Content Include="Areas\Admin\Views\Testimonial\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Testimonial\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Testimonial\Index.cshtml" />
+    <Content Include="Content\Uploads\TestimonialImage\2\Testimonial 1.webp" />
+    <Content Include="Content\Uploads\TestimonialImage\1\testimonial 3.webp" />
+    <Content Include="Content\Uploads\TestimonialImage\3\testimonial 2.webp" />
+    <Content Include="Areas\Admin\Views\Blog\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Gallery\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Gallery\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Gallery\Index.cshtml" />
+    <Content Include="Content\Public\images\Photo.webp" />
+    <Content Include="Content\Public\images\Vidyanjali_Testimonial-1.webp" />
+    <Content Include="Content\Public\images\30_Years_Logo.webp" />
+    <Content Include="Areas\Admin\Views\Bugle\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Bugle\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Bugle\Index.cshtml" />
+    <Content Include="Content\Public\images\Prep II &amp; III.webp" />
+    <Content Include="Content\Public\images\Prep II &amp; III-1.webp" />
+    <Content Include="Content\Public\images\CBSE I to VIII-1.webp" />
+    <Content Include="Content\Public\images\CBSE_IX _and_X-1.webp" />
+    <Content Include="Content\Public\images\CBSE_I_to_VIII.webp" />
+    <Content Include="Content\Public\images\CBSE IX &amp; X.webp" />
+    <Content Include="Content\Public\images\CBSEIX_and_X.webp" />
+    <Content Include="Content\Uploads\TeamImage\10\Poonam-Mishra.webp" />
+    <Content Include="Content\Uploads\TeamImage\1\vijya.webp" />
+    <Content Include="Content\Uploads\TeamImage\3\Mrs-Sharda-T-Rao.webp" />
+    <Content Include="Content\Uploads\TeamImage\4\Ramesh.T.webp" />
+    <Content Include="Content\Uploads\TeamImage\5\Venkatesh-S-Ayachit.webp" />
+    <Content Include="Content\Uploads\TeamImage\6\Suma-Sunil-Unki.webp" />
+    <Content Include="Content\Uploads\TeamImage\7\Nandeesha-A.webp" />
+    <Content Include="Content\Uploads\TeamImage\8\BalaKrishna.D.webp" />
+    <Content Include="Content\Uploads\TeamImage\9\Manohara-R.webp" />
+    <Content Include="Areas\Admin\Views\Admission\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admission\Details.cshtml" />
+    <Content Include="Content\Uploads\TeamImage\12\Lakshmi-Tapasvi.webp" />
+    <Content Include="Content\Uploads\TeamImage\13\Madhavi-Konduru.webp" />
+    <Content Include="Content\Uploads\TeamImage\14\Geetha-Raj.webp" />
+    <Content Include="Content\Uploads\TeamImage\15\Veena-N.webp" />
+    <Content Include="Content\Uploads\TeamImage\16\Jayashree-Jagadish.webp" />
+    <Content Include="Content\Uploads\TeamImage\17\Girisha.webp" />
+    <Content Include="Content\Uploads\TeamImage\18\Pareen-Banu.webp" />
+    <Content Include="Content\Uploads\TeamImage\19\Soumya-Shree.webp" />
+    <Content Include="Content\Uploads\TeamImage\20\Tina-Thabitha-Prathap.webp" />
+    <Content Include="Content\Uploads\TeamImage\21\Brinda-Kumar.webp" />
+    <Content Include="Content\Uploads\TeamImage\22\Manasa-Mallur.webp" />
+    <Content Include="Content\Uploads\TeamImage\23\Sonia.webp" />
+    <Content Include="Content\Uploads\TeamImage\24\Munawar-Begum.webp" />
+    <Content Include="Content\Uploads\TeamImage\25\P-Amitha.webp" />
+    <Content Include="Content\Uploads\TeamImage\26\Niveda-R.webp" />
+    <Content Include="Content\Uploads\TeamImage\27\Gayathri-Sambaraju.webp" />
+    <Content Include="Content\Uploads\TeamImage\28\Sajani.K.S.webp" />
+    <Content Include="Content\Uploads\TeamImage\29\Monlisa-Ghosh.webp" />
+    <Content Include="Content\Uploads\TeamImage\30\Ayesha-Anjum.webp" />
+    <Content Include="Content\Uploads\TeamImage\31\Swapna-Tanneer.webp" />
+    <Content Include="Content\Uploads\TeamImage\32\R.Durkasri.webp" />
+    <Content Include="Content\Uploads\TeamImage\33\Sumathi-K-S.webp" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.7.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Views\Shared\_GeneralPage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\InnerPage.cshtml" />
+    <Content Include="Views\Shared\_GeneralEnquiry.cshtml" />
+    <Content Include="Views\Mail\ThankyouforEnquiry.html.cshtml" />
+    <Content Include="Views\Shared\_BannerSection.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_HeaderStatic.cshtml" />
+    <Content Include="Views\Shared\_IndexHeader.cshtml" />
+    <Content Include="Views\Shared\_ContactUs.cshtml" />
+    <Content Include="Views\Shared\Thankyou.cshtml" />
+    <Content Include="Views\Shared\_testimonials.cshtml" />
+    <Content Include="Views\Shared\_ourteam.cshtml" />
+    <Content Include="Views\Shared\_faqs.cshtml" />
+    <Content Include="Views\Shared\_spotlight.cshtml" />
+    <Content Include="Views\Shared\_blog.cshtml" />
+    <Content Include="Views\Shared\_gallery.cshtml" />
+    <Content Include="Views\Shared\_admissionEnquiry.cshtml" />
+    <Content Include="Views\Shared\_homeTestimonials.cshtml" />
+    <Content Include="Views\Shared\_bugles.cshtml" />
+    <Content Include="Views\Home\BlogPage.cshtml" />
+    <Content Include="Views\Mail\EnquiryMailtoAdmin.html.cshtml" />
+    <Content Include="Views\Mail\AdmissionMailtoAdmin.html.cshtml" />
+    <Content Include="Views\Mail\ThankyouforAdmission.html.cshtml" />
+    <Content Include="Views\Shared\_innerbanners.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\spellchecker\classes\utils\" />
+    <Folder Include="Areas\Admin\Content\editors\tinymce\jscripts\tiny_mce\plugins\spellchecker\includes\" />
+    <Folder Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\spellchecker\classes\utils\" />
+    <Folder Include="Areas\Admin\Content\js\tinymce\jscripts\tiny_mce\plugins\spellchecker\includes\" />
+    <Folder Include="Areas\EMS\Views\Shared\" />
+    <Folder Include="Areas\FileManagement\Content\Temporary\" />
+    <Folder Include="Content\Uploads\BlogImage\5\" />
+    <Folder Include="Content\Uploads\BlogImage\6\" />
+    <Folder Include="Content\Uploads\BlogImage\7\" />
+    <Folder Include="Content\Uploads\BlogImage\8\" />
+    <Folder Include="Content\Uploads\GalleryImage\1\" />
+    <Folder Include="Content\Uploads\GalleryImage\2\" />
+    <Folder Include="Content\Uploads\GalleryImage\3\" />
+    <Folder Include="Content\Uploads\GalleryImage\4\" />
+    <Folder Include="Content\Uploads\GalleryImage\5\" />
+    <Folder Include="Content\Uploads\GalleryImage\6\" />
+    <Folder Include="Content\Uploads\GalleryImage\7\" />
+    <Folder Include="Content\Uploads\GalleryImage\8\" />
+    <Folder Include="Content\Uploads\GalleryImage\9\" />
+    <Folder Include="Content\Uploads\Spotlight\1\" />
+    <Folder Include="Content\Uploads\Spotlight\2\" />
+    <Folder Include="Content\Uploads\Spotlight\3\" />
+    <Folder Include="Content\Uploads\Spotlight\4\" />
+    <Folder Include="Content\Uploads\Spotlight\5\" />
+    <Folder Include="Content\Uploads\Spotlight\6\" />
+    <Folder Include="Views\Home\Widgets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6153</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12541/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
