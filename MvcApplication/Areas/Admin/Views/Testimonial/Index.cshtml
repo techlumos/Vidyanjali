@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Vidyanjali.Areas.Admin.Models.Topic.Testimonials>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="main-content-header">
+        <h3><i class="fa fa-sitemap fa-2x"></i>Manage Pages</h3>
+        <a href="@Url.Action("Create", "Testimonial")" class="add-new"><i class="fa fa-plus"></i>Add new</a>
+    </div>
+
+    <table class="table-list" id="groupingTable">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th style="width: 180px; text-align: center">
+                    Published
+                </th>
+                <th>
+                    Created date
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width: 70px; text-align: center">
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Testimonial", new { id = item.Id })" title="Edit Webpage : '@item.Name'">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a>
+                    </td>
+
+                    <td style="width: 130px; text-align: center">
+                        @if (item.IsPublished)
+                        {
+                            <i class="fa fa-check" style="float: none"></i>
+                        }
+                        else
+                        {
+                            <i class="fa fa-times" style="float: none"></i>
+                        }
+                    </td>
+                    <td style="width: 130px; text-align: center">
+                        @Html.DisplayFor(modelItem => item.CreatedOn)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

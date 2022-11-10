@@ -1,0 +1,89 @@
+﻿@using Vidyanjali.Areas.Admin.Models.Seo
+@model IEnumerable<Vidyanjali.Areas.Admin.Models.Topic.WebPage>
+
+@{
+    ViewBag.Title = "Web Pages";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Web Pages</h2>
+<div class="main-content">
+    <div class="main-content-header">
+        <h3><i class="fa fa-sitemap fa-2x"></i>Manage Pages</h3>
+        <a href="@Url.Action("Create", "WebPage")" class="add-new"><i class="fa fa-plus"></i>Add new</a>
+    </div>
+
+    <table class="table-list" id="groupingTable">
+        <thead>
+            <tr>
+                <th>ID
+                </th>
+                <th>Title
+                </th>
+                <th>Parent
+                </th>
+                <th style="width: 180px; text-align: center">Include in Sitemap
+                </th>
+                <th>Priority
+                </th>
+                <th style="width: 180px; text-align: center">Published
+                </th>
+                <th style="width: 200px; text-align: center">Authorization
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width: 70px; text-align: center">
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "WebPage", new { id = item.Id })" title="Edit Webpage : '@item.Heading'">
+                            @Html.DisplayFor(modelItem => item.Heading)
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ParentPage.Heading)
+                    </td>
+                    <td style="width: 180px; text-align: center">
+                        @if (item.IncludeInSitemap)
+                        {
+                            <i class="fa fa-check" style="float: none"></i>
+                        }
+                        else
+                        {
+                            <i class="fa fa-times" style="float: none"></i>
+                        }
+                    </td>
+                    <td style="width: 110px; text-align: center">
+                        @Html.DisplayFor(modelItem => item.Priority)
+                    </td>
+                    <td style="width: 130px; text-align: center">
+                        @if (item.IsPublished)
+                        {
+                            <i class="fa fa-check" style="float: none"></i>
+                        }
+                        else
+                        {
+                            <i class="fa fa-times" style="float: none"></i>
+                        }
+                    </td>
+                    <td style="text-align: center">
+                        @Html.DisplayFor(modelItem => item.AuthorizationStatus)
+                        @if (User.IsInRole("Authorizer") || User.IsInRole("Super User"))
+                        {
+                            if(item.AuthorizationStatus == AuthorizationStatuses.Pending.ToString())
+                            {
+                            <a href="@Url.Action("Edit", "WebPage", new { id = item.Id })" title="Authorize Webpage : '@item.Heading'">Authorize</a>
+                            }
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

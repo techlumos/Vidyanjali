@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Sripuram Store -->
+<Files>
+  <FileType Type="Image" Allowed="*.jpg; *.png; *.tif; *.jpeg" Size="10MB">
+   <File Section="ContentImage" Group="Content">
+      <Width>390</Width>
+      <Height>390</Height>
+      <Thumbs>134x170</Thumbs>
+      <Directory>/Content/Uploads/ContentImage</Directory>
+      <Description>
+        <![CDATA[
+        <p>Product Management - A default product image</p>
+        ]]>
+      </Description>
+    </File>
+    <File Section="TestimonialImage" Group="Testimonial">
+      <Width>390</Width>
+      <Height>390</Height>
+      <Thumbs>134x170</Thumbs>
+      <Directory>/Content/Uploads/TestimonialImage</Directory>
+      <Description>
+        <![CDATA[
+        <p>Product Management - A default product image</p>
+        ]]>
+      </Description>
+    </File>
+    <File Section="BlogImage" Group="Blog">
+      <Width>390</Width>
+      <Height>390</Height>
+      <Thumbs>134x170</Thumbs>
+      <Directory>/Content/Uploads/BlogImage</Directory>
+      <Description>
+        <![CDATA[
+        <p>Product Management - A default product image</p>
+        ]]>
+      </Description>
+    </File>
+    <File Section="SpotlightImage" Group="Spotlight">
+      <Width>390</Width>
+      <Height>390</Height>
+      <Thumbs>134x170</Thumbs>
+      <Directory>/Content/Uploads/SpotlightImage</Directory>
+      <Description>
+        <![CDATA[
+        <p>Product Management - A default product image</p>
+        ]]>
+      </Description>
+    </File>
+    <File Section="TeamImage" Group="Team">
+      <Width>164</Width>
+      <Height>164</Height>
+      <Thumbs>134x170</Thumbs>
+      <Directory>/Content/Uploads/TeamImage</Directory>
+      <Description>
+        <![CDATA[
+        <p>Product Management - A default product image</p>
+        ]]>
+      </Description>
+    </File>
+    <File Section="GalleryImage" Group="Gallery">
+      <Width>800</Width>
+      <Height>600</Height>
+      <Thumbs>800x600</Thumbs>
+      <Directory>/Content/Uploads/GalleryImage</Directory>
+      <Description>
+        <![CDATA[
+        <p>Product Management - A default product image</p>
+        ]]>
+      </Description>
+    </File>
+    <File Section="TeamImage" Group="Team">
+      <Width>390</Width>
+      <Height>390</Height>
+      <Thumbs>134x170</Thumbs>
+      <Directory>/Content/Uploads/TeamImage</Directory>
+      <Description>
+        <![CDATA[
+        <p>Product Management - A default product image</p>
+        ]]>
+      </Description>
+    </File>
+    <File Section="Banner" Group="Home">
+      <Width>545</Width>
+      <Height>364</Height>
+      <Thumbs>None</Thumbs>
+      <Directory>/Content/Uploads/Banner</Directory>
+      <Description>
+        <![CDATA[
+        <p>Home Page - Gallery</p>
+        ]]>
+      </Description>
+    </File>
+  </FileType>
+</Files>

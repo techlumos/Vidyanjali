@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Upload new File";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Upload File</h2>
+<div>
+    <object type="application/x-shockwave-flash" width="0" height="0">
+        <a href="http://www.adobe.com/go/getflashplayer" target="_blank"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a>
+    </object>
+</div>
+@using (Html.BeginForm("Upload", "ImageManager", FormMethod.Post, new Dictionary<string, object> { { "id", "frmImgUpload" } }))
+{
+    <div id="optType">
+        <div class="editor-label">
+            Select Type
+        </div>
+        <div class="editor-field">
+            <div id="resultSelectType">
+            </div>
+        </div>
+    </div>
+    <div id="optSection" style="display: none">
+        <div class="editor-label">
+            Select Section
+        </div>
+        <div class="editor-field">
+            <div id="resultSelectSection">
+            </div>
+        </div>
+        <div class="editor-field" id="showCustomHeightWidth">
+            Resolution :
+            <input type="text" name="txtWidth" id="txtWidth" data="0" style="width: 50px" onkeypress="return isNumberKey(event)" />
+            X
+            <input type="text" name="txtHeight" id="txtHeight" data="0" style="width: 50px" onkeypress="return isNumberKey(event)" />
+            <a href="#" id="resetDefaults" class="button left" title="reset to Original" style="float: none; margin: -8px 3px;">
+                <span class="icon icon188"></span></a>
+        </div>
+        <div class="editor-field" id="sectionDescription">
+        </div>
+    </div>
+    <div id="optUploader" style="display: none">
+        <div class="editor-field">
+            <input type="file" name="file_upload" id="file_upload" />
+            <input type="hidden" name="hdRerefenceId" value="@ViewBag.ReferenceID" />
+            <input type="hidden" name="uploadGroup" value="@ViewBag.Group" />
+
+            <!-- JCrop Values-->
+            <input type="hidden" name="x" value="0" />
+            <input type="hidden" name="y" value="0" />
+            <input type="hidden" name="x1" value="0" />
+            <input type="hidden" name="y1" value="0" />
+        </div>
+    </div>
+    <div id="listPreview">
+    </div>
+    <p class="ibuttons">
+        <input type="submit" value="Upload" id="btnUpload" class="ibutton save" />
+    </p>
+}
+
+<div id="imageList_container">
+    <div id="imageList_box">
+    </div>
+</div>
+ @*<a style="color: #ff9934;
+  font-weight: bold;" href="@Url.Action("Index", "Product", new { area = "Admin" })">Manage products</a>*@
+@section style
+{
+    <link href="@Url.Content("~/Areas/FileManagement/Content/Uploadify/uploadify.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Areas/FileManagement/Content/jCrop/jquery.Jcrop.css")" rel="stylesheet" />
+}
+
+@section script
+{
+    <script src="@Url.Content("~/Areas/FileManagement/Content/Uploadify/jquery.uploadify.js")"></script>
+    <script src="@Url.Content("~/Areas/FileManagement/Content/Uploadify/jquery.pinbox.js")"></script>
+    <script src="@Url.Content("~/Areas/FileManagement/Content/jCrop/jquery.Jcrop.js")"></script>
+    <script src="@Url.Content("~/Areas/FileManagement/Content/jCrop/jquery.color.js")"></script>
+    <script src="@Url.Content("~/Areas/FileManagement/Content/Uploadify/files.js")"></script>
+   
+    <script>
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+}

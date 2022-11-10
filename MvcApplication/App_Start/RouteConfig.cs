@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+
+namespace Vidyanjali.App_Start
+{
+    public class RouteConfig
+    {
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                "Pages", // Route name
+                "Pages/{url}", // URL with parameters
+                new { controller = "Home", action = "InnerPage", url = UrlParameter.Optional } // Parameter defaults
+            );
+            routes.MapRoute(
+               "Vidyanjaliblog", // Route name
+               "Vidyanjaliblog/{url}", // URL with parameters
+               new { controller = "Home", action = "BlogPage", url = UrlParameter.Optional } // Parameter defaults
+           );
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+        }
+    }
+}

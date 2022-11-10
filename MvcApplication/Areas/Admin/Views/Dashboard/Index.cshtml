@@ -1,0 +1,211 @@
+﻿@using Vidyanjali.Models
+@using Vidyanjali.Areas.Admin.Models.Stakeholder
+@{
+    Layout = null;
+}
+@using (CoreContext _db = new CoreContext())
+{
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dashboard</title>
+    <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,400,300' rel='stylesheet' type='text/css' />
+    <link href="@Url.Content("/Areas/Admin/Content/css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("/Areas/Admin/Content/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <style>
+        .table1 {
+             background:#f1dcb7;
+        }
+         .table1:hover h3{
+            color:#fff;
+        }
+        .table1:hover tr{
+            background:#8c3089 !important;
+        }
+        .table1:hover h3{
+            transform:scale(1.2);
+            transition-duration: 0.5s;
+            -webkit-transition-duration: 0.5s;
+            -webkit-transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo">
+                VIDYANJALI<a href="#" class="sidebar-hook"><i class="fa fa-align-justify fa-2x"></i></a>
+            </div>
+            <div class="identity">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <text>Welcome </text>
+                    @User.Identity.Name
+                    <text>|</text>
+                    <a href="@Url.Action("UserManual", "Dashboard", new { area = "Admin" })" target="_blank">Help</a>
+                    <text>|</text> 
+                    <a href="@Url.Action("LogOff", "AdminAccount", new { area = "Admin" })">Log Out</a>
+                }
+            </div>
+        </div>
+     
+            @{
+                //Html.RenderPartial("_MainMenu");
+                Html.RenderPartial("~/Areas/Admin/Views/Shared/_MainMenu.cshtml");
+            } 
+       
+            <div class="main-content-container">
+                <h2>Dashboard</h2>
+                <div style="min-height:10px;">&nbsp;</div>
+                <div style="min-height:50px;">
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="text-align:center;padding:0 1px 0 0;">
+                                <a href="@Url.Action("Index", "WebPage")">
+                                    <table style="width:100%;" Class="table1">
+                                        <tr>
+                                            <td style="text-align:center;padding-top:15px;"><h3 style=""><i class="fa fa-clipboard fa-1x" style="float:none"></i></h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center;"><h3 style="">Web Pages</h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center;padding-bottom:15px;"><h3 style="font-weight:bold;">@ViewBag.webpagescount</h3></td>
+                                        </tr>
+                                    </table>
+                                </a>
+                            </td>
+                            <td style="text-align:center;padding:0 1px 0 0;">
+                                <a href="@Url.Action("Index", "Admission")">
+                                    <table style="width:100%;" Class="table1">
+                                        <tr>
+                                            <td style="text-align:center;padding-top:15px;"><h3 style=""><i class="fa fa-envelope-o fa-1x" style="float:none"></i></h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center;"><h3 style="">Admission Enquiries</h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center;padding-bottom:15px;"><h3 style="font-weight:bold;">@ViewBag.admissioncount</h3></td>
+                                        </tr>
+                                    </table>
+                                </a>
+                            </td>
+                            <td style="text-align:center;padding:0 1px 0 0;">
+                                <a href="@Url.Action("Index", "Enquiry", new { area = "EMS"})">
+                                    <table style="width:100%;" Class="table1">
+                                        <tr>
+                                            <td style="text-align:center;padding-top:15px;"><h3 style=""><i class="fa fa-envelope-o fa-1x" style="float:none"></i></h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center;"><h3 style="">Enquiries</h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center;padding-bottom:15px;"><h3 style="font-weight:bold;">@ViewBag.enquirycount</h3></td>
+                                        </tr>
+                                    </table>
+                                </a>
+                            </td>
+                            <td style="text-align:center;padding:0 1px 0 0;">
+                                <a href="@Url.Action("Index", "Testimonials", new { area = "Admin"})">
+                                    <table style="width:100%;" Class="table1">
+                                        <tr>
+                                            <td style="text-align:center;padding-top:15px;"><h3 style=""><i class="fa fa-cloud  fa-1x" style="float:none"></i></h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center;"><h3 style="">Testimonials</h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center;padding-bottom:15px;"><h3 style="font-weight:bold;">@ViewBag.testimonialsCount</h3></td>
+                                        </tr>
+                                    </table>
+                                </a>
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="main-content-left">
+                    <div class="store-stats">
+                        <h3><i class="fa fa-envelope-o fa-2x"></i>Enquiries</h3>
+                        <div class="registered-customers">
+                            <h4 style="font-weight:600">Enquiries <a href="@Url.Action("Index", "Enquiry", new { area = "EMS"})" style="text-decoration:underline;color:#fff;float:right" title="View Events"> @ViewBag.enquirycount </a></h4>
+                            <table class="table-stat">
+                                @{
+                                    <tbody>
+                                       <tr>
+                                            <td class="period">Today</td>
+                                            <td class="count align-right">@ViewBag.enquiriestoday</td>
+                                        </tr>
+                                       <tr>
+                                            <td class="period">7 days</td>
+                                            <td class="count align-right">@ViewBag.enquiriesthisweek</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="period">1 month</td>
+                                            <td class="count align-right">@ViewBag.enquiriesthismonth</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="period">3 months</td>
+                                            <td class="count align-right">@ViewBag.enquiriesthisquarter</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="period">1 year</td>
+                                            <td class="count align-right">@ViewBag.enquiriesthisyear</td>
+                                        </tr>
+                                    </tbody>
+                                 
+                                }
+                            </table>
+                        </div>
+                        <!--registered-customers-->
+                    </div>
+                    <!--store-stats-->
+                </div>
+                 <div class="main-content-left">
+                    <div class="store-stats">
+                        <h3><i class="fa fa-clipboard fa-2x"></i>Webpages</h3>
+                        <div class="registered-customers">
+                            <h4 style="font-weight:600">Webpages <a href="@Url.Action("Index", "Webpage")" style="text-decoration:underline;color:#fff;float:right" title="View Quotations">@ViewBag.webpagescount </a></h4>
+                            <table class="table-stat">
+                                @{
+                                    <tbody>
+                                       <tr>
+                                            <td class="period">Total</td>
+                                            <td class="count align-right">@ViewBag.webpagescount</td>
+                                        </tr>
+                                       <tr>
+                                            <td class="period">Active</td>
+                                            <td class="count align-right">@ViewBag.webpagesactive</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="period">Inactive</td>
+                                            <td class="count align-right">@ViewBag.webpagesinactive</td>
+                                        </tr>
+                                    </tbody>
+                                 
+                                }
+                            </table>
+                        </div>
+                        <!--registered-customers-->
+                    </div>
+            </div>
+                <!--main-content-left-->
+            </div>
+       
+        <!--main-content-->
+    </div>
+     
+    <!--wrapper-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("/Areas/Admin/Content/js/jquery.hoverIntent.minified.js")" type="text/javascript"></script>
+    <script src="@Url.Content("/Areas/Admin/Content/js/admin.js")" type="text/javascript"></script>
+</body>
+</html>
+}

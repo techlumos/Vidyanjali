@@ -1,0 +1,52 @@
+﻿#wrapper {
+    width: 100%;
+    min-height: 600px;
+    height: auto;
+    clear: both;
+    margin: 0 auto;
+    background: url('../images/bodybg.jpg') repeat;
+}
+
+#headerPanel {
+    width: 100%;
+    min-height: 80px;
+    height: auto;
+    float: left;
+    border-bottom: 0 none transparent;
+}
+
+#rightPanel {
+    float: left;
+    width: 96%;
+    min-height: 580px;
+    height: auto;
+    position: relative;
+    background: #ecdec9;
+    padding: 20px 20px 0 20px;
+}
+
+#poweredBy, #poweredBy a , #copyrights {
+    color: #fff
+}
+
+/*Buttons*/
+button, .button {
+    background: rgb(89,77,46)!important;
+}
+
+    .ddm span.label, button span.label, .button span.label {
+        color: #fff !important;
+    }
+
+/*data table*/
+table.dataTable tr.odd {
+    background-color: rgb(233, 208, 192) !important;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+    background-color: rgb(236, 194, 168) !important;
+}
+
+table.dataTable tr.even td.sorting_1 {
+    background-color: rgb(216, 177, 152) !important;
+}

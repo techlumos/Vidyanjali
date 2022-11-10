@@ -1,0 +1,57 @@
+﻿body {
+    -webkit-font-smoothing: antialiased;
+    color: #333;
+    font: 12px/22.5px "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+/* Styles for elements of Grid */
+.DTTT_container {
+    float: left;
+    margin: 0 0 0 50px;
+}
+
+/* Overwrite Data-table CSS */
+table.dataTable th {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+table.dataTable tr.odd, table.dataTable tr.even, table.dataTable tr.odd td.sorting_1, table.dataTable tr.even td.sorting_1 {
+    background-color: transparent;
+}
+
+table.dataTable td {
+    padding: 0 !important;
+}
+
+/* Overwrite Tabs*/
+.ui-tabs {
+    width: 99%;
+    border: 0 none !important;
+}
+
+    .ui-tabs .ui-tabs-panel {
+        background: #fff !important;
+        border-top: 0 none !important;
+    }
+
+.ui-widget-content {
+    background: none !important;
+}
+
+.ui-tabs-panel {
+    border: 1px solid #CCC !important;
+}
+
+
+/*Styles for Grouping tables*/
+#groupingTable {
+    width: 100% !important;
+}
+
+
+.group {
+    background: #9bb2b8;
+    color: #333;
+    font-size: 13px;
+}

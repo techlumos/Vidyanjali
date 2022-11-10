@@ -1,0 +1,74 @@
+﻿@model Vidyanjali.Areas.EMS.Models.Enquiry
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Enquiry</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReferenceId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReferenceId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Visitor.Host)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Visitor.Host)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnquiryDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnquiryDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnqCategoryType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnqCategoryType)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

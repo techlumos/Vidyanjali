@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Vidyanjali.Areas.FileManagement.Models.ImageFile>
+@if (Model.Any())
+{
+    <table class="gridData">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width: 170px">
+                        <a class="fancybox" title="@item.Caption" href="@Url.Content(item.Url)" >
+                            @if (item.IsDefault)
+                            {
+                                <img src="@Url.Content(item.Url)" alt="@item.Caption" class="imageList_box_img default_file" id="imgList_@(item.Id)"/>
+                            }
+                            else
+                            {
+                                <img src="@Url.Content(item.Url)" alt="@item.Caption" class="imageList_box_img" id="imgList_@(item.Id)"/>
+                            }
+                        </a>
+                    </td>
+                    <td style="vertical-align: top">
+                        <div class="imageList_box_details">
+                            <ul>
+                                <li><strong>Name :</strong> @item.FileName</li>
+                                <li><strong>Caption :</strong> @item.Caption</li>
+                                <li><strong>Description :</strong> @item.Description</li>
+                                <li><strong>Size :</strong> @item.Size</li>
+                                <li><strong>URL :</strong> @item.Url</li>
+                                <li>
+                                    @if (item.IsDefault)
+                                    {
+                                        <input type="radio" id="rdDefault_@(item.Id)" class="rdSetDefault" value="@item.Id" data="@string.Format("{0}|{1}|{2}|{3}|{4}", item.Type, item.Group, item.Section, item.Id, item.ReferenceId)" checked="checked"  name="inputDefault"/>
+                                        <strong>Default</strong>
+                                    }
+                                    else
+                                    {
+                                        <input type="radio" id="rdDefault_@(item.Id)" class="rdSetDefault" value="@item.Id" data="@string.Format("{0}|{1}|{2}|{3}|{4}", item.Type, item.Group, item.Section, item.Id, item.ReferenceId)" name="inputDefault"/>
+                                        <strong>Default</strong>
+                                    }
+                                </li>
+                                <li><strong>Tags :</strong> @item.Tag</li>
+                                <li>
+                                    <a href="@Url.Action("Edit", "ImageManager", new { id = item.Id })" class = "button left editFile fancybox.ajax" title="Edit file info">
+                                        <span class="icon icon145"></span></a>
+                                    <a href="@Url.Action("Delete", "ImageManager", new { id = item.Id })" class = "button middle" title="Delete file" onclick="javascript:return confirm('Are you sure, You want delete @(item.FileName)? It cannot be restored!');">
+                                        <span class="icon icon56"></span></a>
+                                    <a href="@Url.Action("UploadFile", "ImageManager", new { area = "FileManagement", group = "HomePage", section = "Hover", referenceId = item.Id }, null)" class = "button middle" title="Add hover Image">
+                                        <span class="icon icon120"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div id="processedStatus" style="display: none">
+        @Html.Raw(ViewBag.Status)
+    </div>
+}

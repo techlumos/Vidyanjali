@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Vidyanjali.Areas.FileManagement.Models.ImageFile>
+@using System.Linq
+<ul id="grid">
+    @if (Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            switch (Path.GetExtension(item.FileName))
+            {
+                case ".jpg":
+                case ".png":
+                case ".gif":
+                    <li>
+                        <input type="hidden" value="" id="referenceID" />
+                        <a href="#">
+                            <img src="@Url.Content(item.Url)" alt="@item.Caption" class="gImage"/>
+                        </a>
+                        <div class="info">
+                            <strong>Name&nbsp;:&nbsp;</strong>@item.FileName<br />
+                            <strong>Size&nbsp;:&nbsp;</strong>@item.Size<br />
+                            <strong>Resolution&nbsp;:&nbsp;</strong>@item.Width X @item.Height
+                        </div>
+                    </li>
+                    break;
+                case ".swf":
+                case ".ram":
+                case ".flv":
+                case ".mov":
+                case ".avi":
+                case ".doc":
+                case ".docx":
+                case ".xls":
+                case ".xlsx":
+                case ".ppt":
+                case ".pptx":
+                case ".pdf":
+                case ".odp":
+                case ".ods":
+                case ".odt":
+                    <li><span class="gImage" title="@item.Url" style="cursor: pointer;" >
+                            <a href="#">
+                                <img src="../../Content/Uploadify/icons/filetype_@(item.Extension.Replace(".", "")).png" alt="@item.Caption" />
+                            </a>
+                        </span>
+                        <div class="info">
+                            <strong>Name&nbsp;:&nbsp;</strong>@item.FileName<br />
+                            <strong>Size&nbsp;:&nbsp;</strong>@item.Size<br />
+                        </div>
+                    </li>
+                    break;
+            }
+        }
+    }
+</ul>
+

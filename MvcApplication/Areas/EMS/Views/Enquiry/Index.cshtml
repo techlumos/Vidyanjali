@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Vidyanjali.Areas.EMS.Models.Enquiry>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Website Enquiries</h2>
+<div class="main-content">
+    <div class="main-content-header">
+        <h3><i class="fa fa-sitemap fa-2x"></i>Manage Enquiries</h3>
+        @*<a href="@Url.Action("Create", "HealthCare")" class="add-new"><i class="fa fa-plus"></i>Add new</a>*@
+    </div>
+
+    <table class="table-list" id="groupingTable">
+        <thead>
+            <tr>
+                <th>Name
+                </th>
+                <th>Email
+                </th>
+                <th>Phone
+                </th>
+                <th>Enquiry Type
+                </th>
+                <th>Message
+                </th>
+                <th>Date
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Details", "Enquiry", new { id = item.ID })" title="View Enquiry Details of : '@item.Name'">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnqCategoryType)
+                    </td>
+                    <td>
+                         @if (item.Message.Length > 50)
+                        {
+
+                            @item.Message.Substring(1,50)<text>...</text> <a href="@Url.Action("Details", "Enquiry", new { id = item.ID })" title="View Enquiry Details of : '@item.Name'" style="color:blue">(More)</a>
+                        }
+                        else
+                        {
+                            @item.Message
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnquiryDate)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

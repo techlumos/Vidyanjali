@@ -1,0 +1,92 @@
+﻿@model Vidyanjali.Areas.Admin.Models.Topic.FAQ
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="main-content">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="main-content-header">
+            <h3><i class="fa fa-sitemap fa-2x"></i>Edit Page</h3>
+            <a href="@Url.Action("Index", "FAQ")" class="back"><i class="fa fa-angle-double-left"></i>Back to list</a>
+            <input type="submit" value="Save Changes @if (User.IsInRole("Authorizer") || User.IsInRole("Super User")){<text>&apm; Authorize</text>}" class="save-btn" />
+        </div>
+
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Information</a></li>
+
+            </ul>
+            <div id="tabs-1">
+                <table class="table-form">
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                @Html.LabelFor(model => model.Heading)
+                            </td>
+                            <td>:</td>
+                            <td>
+                                @Html.TextBoxFor(model => model.Heading, new Dictionary<string, object> { { "class", "replication" } })
+                                @Html.ValidationMessageFor(model => model.Heading)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                @Html.LabelFor(model => model.Content, "Full Content")
+                            </td>
+                            <td>:</td>
+                            <td>
+                                @Html.TextAreaFor(model => model.Content, new Dictionary<string, object> { { "class", "mceEditor" } })
+                                @Html.ValidationMessageFor(model => model.Content)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.LabelFor(model => model.Priority)
+                            </td>
+                            <td>:</td>
+                            <td>
+                                @Html.TextBoxFor(model => model.Priority)
+                                @Html.ValidationMessageFor(model => model.Priority)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.LabelFor(model => model.IsPublished, "Published")
+                            </td>
+                            <td>:</td>
+                            <td>
+                                @Html.CheckBoxFor(model => model.IsPublished)
+                                @Html.ValidationMessageFor(model => model.IsPublished)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    }
+</div>
+
+@section js{
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("/Areas/Admin/Content/editors/tinymce/jscripts/tiny_mce/tiny_mce.js")" type="text/javascript"></script>
+    <script src="@Url.Content("/Areas/Admin/Content/editors/jquery-tinyMce.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $("input#Heading").keyup(function () {
+            $(".replication").val(this.value);
+            var inputWithoutSpace = this.value.replace(/[^a-z0-9_&\s]/gi, '').replace(/[\s]/g, '-').replace(/[&]/g, 'and');
+            $("input#Url").val(inputWithoutSpace);
+        });
+
+        $(".replication").change(function () {
+            $(this).removeClass("replication");
+        });
+    </script>
+}

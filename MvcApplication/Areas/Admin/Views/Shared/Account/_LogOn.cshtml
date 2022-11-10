@@ -1,0 +1,32 @@
+﻿@model Vidyanjali.Areas.Admin.Models.Stakeholder.AdminUser
+@{
+    string retUrl = "";
+    string tempUrl = null;
+    tempUrl = ViewBag.ReturnUrl;
+    if(!string.IsNullOrEmpty(tempUrl))
+    {
+        retUrl = tempUrl;
+    }   
+  }
+
+
+
+
+
+               
+                @using (Html.BeginForm("LogOn", "AdminAccount", FormMethod.Post, new { model = this.Model, returnUrl = retUrl, @class = "enq" }))
+                {
+                  @Html.AntiForgeryToken()
+                 <input type="hidden" name="loginType" value="General" />
+                 <div class="form-info">
+                     @Html.TextBoxFor(model => model.Email, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Email Address" } })
+                     @Html.ValidationMessageFor(model => model.Email)
+                 </div>
+                 <div class="form-info">
+                     @Html.PasswordFor(model => model.Password, new Dictionary<string, object> { { "maxlength", "25" }, { "placeholder", "Password" } })
+                     @Html.ValidationMessageFor(model => model.Password)
+                 </div>
+                    @Html.ValidationMessage("LogOnError")
+                  
+                  <input type="submit" name="login" value="Login" class="con-sub">
+                }
