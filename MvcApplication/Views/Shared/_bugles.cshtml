@@ -1,0 +1,40 @@
+﻿@model Vidyanjali.Areas.Admin.Models.Topic.Bugle
+@using Vidyanjali.Models
+@{
+    CoreContext db = new CoreContext();
+    var bugles = db.Bugles.Where(t => t.IsPublished).ToList();
+}
+@for (int i = 0; i < bugles.Count(); i += 6)
+{
+    var twoItems = bugles.Skip(i).Take(6);
+<div class="e-news">
+    <h3>Vidyanjali Bugle @twoItems.Distinct()</h3>
+    <div class="panel">
+        <div class="row">
+            @foreach (var item in twoItems)
+            {
+                if (item.ParentVolume == item.Volume)
+                {
+
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <div class="e-news-inner-10" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+                            <div class="overlay-inner">
+                                <div class="ovrly-text">
+                                    <h4>@item.Name</h4>
+                                    <p>@item.Volume</p>
+                                    <p>@item.IssueType</p>
+                                    <p>@item.ReleasedOn</p>
+                                </div>
+                                <div class="download">
+                                    <a href="content/public/pdf/Vidyanjali Bugle Volume 6, Issue 1 May June 2020 .pdf" target="_blank"><img src="content/public/images/Fees - Profile Download.webp" class="img-fluid" alt="Fees PDF Download"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+                }
+            }
+        </div>
+    </div>
+</div>
+}

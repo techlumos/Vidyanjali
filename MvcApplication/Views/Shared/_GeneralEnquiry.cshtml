@@ -1,0 +1,52 @@
+﻿@model Vidyanjali.Areas.EMS.Models.Enquiry
+
+
+
+@using (Html.BeginForm("Enquiry", "Home", FormMethod.Post, new { model = this.Model, @id = "contactForm" }))
+{
+    @Html.AntiForgeryToken()
+    <h3>Enquire Now</h3>
+    <div class="form-info">
+        @Html.TextBoxFor(model => model.Name, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Name" } })
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div class="form-info">
+        @Html.TextBoxFor(model => model.Phone, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Phone Number" } })
+        @Html.ValidationMessageFor(model => model.Phone)
+    </div>
+    <div class="form-info">
+        @Html.TextBoxFor(model => model.Email, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "email ID" } })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <div class="form-info">
+        @Html.TextBoxFor(model => model.Subject, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Subject" } })
+        @Html.ValidationMessageFor(model => model.Subject)
+    </div>
+    <div class="form-info">
+        @Html.TextAreaFor(model => model.Message, new Dictionary<string, object> { { "rows", "3" }, { "placeholder", "Message" } })
+        @Html.ValidationMessageFor(model => model.Message)
+    </div>
+    <div class="editor-field">
+        <div class="captcha">
+            <a href="@Url.Action("Home")">
+                <img alt="Captcha" src="@Url.Action("CaptchaImage")" />
+            </a>
+        </div>
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(p => p.Captcha, new Dictionary<string, object> { { "placeholder", "Enter verification code here" } })
+
+        @*<input type="text" placeholder="Enter verification code here">*@
+    </div>
+    <div class="editor-field" style="color:red;">
+        @TempData["Message"]
+    </div>
+    <div class="form-info">
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" required>
+        <label for="vehicle1"> YES, I have read and agree to the privacy policy, and herewith share my details to be contactedm by the school.</label>
+    </div>
+    <input type="submit" value="Submit" />
+}
+
+

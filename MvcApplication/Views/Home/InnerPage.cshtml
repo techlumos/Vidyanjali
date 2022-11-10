@@ -1,0 +1,218 @@
+﻿@model Vidyanjali.Areas.Admin.Models.Topic.WebPage
+
+@{
+    /**/
+
+    Layout = "~/Views/Shared/_GeneralPage.cshtml";
+    var referenccode = Model.ReferenceCode;
+    //ViewBag.Title = ViewBag.title;
+    //var ID = ViewBag.Id;
+    var files = new Vidyanjali.Areas.FileManagement.Models.FileRepository().GetImages("ContentImage", "Content", Model.Id).FirstOrDefault();
+}
+<div class="outer-container">
+    <div class="banner">
+        @{Html.RenderPartial("/Views/Shared/_innerbanners.cshtml", Model); }
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    @Html.Raw(new Vidyanjali.Helper.Home().PageBc(Model))
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="container">
+        @if (Model.ReferenceCode == "ExtraCurricular37" || Model.ReferenceCode == "UniquelyVidyanjali38")
+        {
+            @Html.Raw(Model.Content)
+        }
+        else
+        {
+            <div class="primary" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1800">
+                <h1>@Model.SubHeading.ToUpper()</h1>
+                @if (Model.ReferenceCode == "CoCurricular36")
+                {
+                    <p> Saturdays are kept for co - curricular activities.The children have to choose one out of Yoga, music, and dance, Karate and chess.</p>
+                }
+                else if (Model.ReferenceCode == "SpotLight18")
+                {
+                    @Html.Raw(Model.Content)
+                }
+                else if (Model.ReferenceCode == "ParentEmpowrementDay20")
+                {
+                    <p data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1200">Parents of Vidyanjali are communicated through various ways to keep them informed about their child’s academic performance, emotional needs, Psychological help, overall development, and day-to-day activities. The parents are oriented regarding the latest requirement on par with the developing needs of the society.</p>
+                }
+                else if (Model.ReferenceCode == "AdmissionEnquiry26")
+                {
+                    @Html.Raw(Model.Content)
+                }
+                else if (Model.ReferenceCode == "VidyanjalisAwardsAndRecognitions15")
+                {
+                    @Html.Raw(Model.Content)
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="awards-img">
+                                <img src="/content/public/images/V_Early.webp" class="img-fluid" alt="child">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="awards-img">
+                                <img src="/content/public/images/V_Innovation.webp" class="img-fluid" alt="child">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+           
+            if (Model.ReferenceCode != "VidyanjalisAwardsAndRecognitions15" || Model.ReferenceCode != "Blogs40")
+            {
+
+                if (Model.ReferenceCode == "OurTeam13")
+                {
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="team-img">
+                                @if (files != null)
+                                {
+                                    <img src="@files.Url" class="img-fluid" alt="@files.Description" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-data">
+                        @Html.Raw(Model.Content)
+                    </div>
+                    Html.RenderPartial("/Views/Shared/_ourteam.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.Team());
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="staff">
+                                <h1 data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">SUPPORTING STAFF</h1>
+                                <img src="/content/public/images/Supporting Staff.webp" class="img-fluid" alt="staff">
+                                <p data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">Our support staff consists of proficient administrators with required skills, able officers at various levels, drivers with proper licenses and badges, and skilled housekeeping staff. The background of all staff has been verified by the Police and many are referred by the Parent Community and possess a good attitude of love and affection towards children.</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.ReferenceCode == "Blogs40")
+                {
+                    Html.RenderPartial("/Views/Shared/_blog.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.Blog());
+                }
+                else
+                {
+                    <div class="row">
+                        @if (Model.ReferenceCode == "AlliancesandAffiliations16" || Model.ReferenceCode == "ThankYou42" || Model.ReferenceCode == "TheCampus12" || Model.ReferenceCode == "AimsandEthos11" || Model.ReferenceCode == "RolesAndResponsibilities17" || Model.ReferenceCode == "MandatoryPublicDisclosure29" || Model.ReferenceCode == "CoCurricular36" || Model.ReferenceCode == "Impact8" || Model.ReferenceCode == "ExamResults39" || Model.ReferenceCode == "ParentEngagementConference19" || Model.ReferenceCode == "Mentorship23" || Model.ReferenceCode == "AdmissionProcess25" || Model.ReferenceCode == "SchoolFees27" || Model.ReferenceCode == "PreprimaryMontessori31")
+                        {
+                            @Html.Raw(Model.Content)
+                        }
+                        else if (Model.ReferenceCode == "Careers44")
+                        {
+                           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="aims">
+                                        <img src="@files.Url" class="img-fluid" alt="@files.Description" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="aims-info">
+                                        @Html.Raw(Model.Content)
+                                    </div>
+                                </div>
+                       }
+                        else if (Model.ReferenceCode == "ParentEmpowrementDay20" || Model.ReferenceCode == "LearningSupport21" || Model.ReferenceCode == "EmotionalCounselling22" || Model.ReferenceCode == "Scholarships28" || Model.ReferenceCode == "PrimaryMontessori32" || Model.ReferenceCode == "PrepIIandIII33" || Model.ReferenceCode == "CBSEItoVIII34" || Model.ReferenceCode == "CBSEIXtoX35")
+                        {
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="inner-info-1">
+                                    @Html.Raw(Model.Content)
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="inner-img-1" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1800">
+                                    @if (files != null)
+                                    {
+                                        <img src="@files.Url" class="img-fluid" alt="@files.Description" />
+                                    }
+                                    else
+                                    {
+                                        <img src="http://via.placeholder.com/430x250" class="img-fluid" alt="" />
+                                    }
+                                </div>
+                            </div>
+                        }
+                        else if (Model.ReferenceCode == "VidyanjaliBugle44")
+                        {
+                            Html.RenderPartial("/Views/Shared/_bugles.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.Bugle());
+                        }
+                        else if (Model.ReferenceCode == "Testimonials41")
+                        {
+                            Html.RenderPartial("/Views/Shared/_testimonials.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.Testimonials());
+                        }
+                        else if (Model.ReferenceCode == "Gallery24")
+                        {
+                            Html.RenderPartial("/Views/Shared/_gallery.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.Gallery());
+                        }
+                        
+                        else if (Model.ReferenceCode == "FAQs30")
+                        {
+                            Html.RenderPartial("/Views/Shared/_faqs.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.FAQ());
+                        }
+                        else if (Model.ReferenceCode == "SpotLight18")
+                        {
+                            Html.RenderPartial("/Views/Shared/_spotlight.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.Spotlight());
+                        }
+                        else if (Model.ReferenceCode == "AdmissionEnquiry26")
+                        {
+                            Html.RenderPartial("/Views/Shared/_admissionEnquiry.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.Admission());
+                        }
+                        else if (Model.ReferenceCode == "ContactUs9")
+                        {
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d497534.2341404903!2d77.59797500000002!3d13.036550000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x43136feaf8d48ec5!2sVidyanjali%20Academy%20for%20Learning!5e0!3m2!1sen!2sus!4v1648102409978!5m2!1sen!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="contact-inner">
+                                    @Html.Raw(Model.Content)
+                                </div>
+                                <div class="contact-inner">
+                                    <p>Fill up this form.</p>
+                                    <p>One of our representatives will get in touch with you within 24 hours.</p>
+                                </div>
+                                @{Html.RenderPartial("/Views/Shared/_GeneralEnquiry.cshtml", new Vidyanjali.Areas.EMS.Models.Enquiry());}
+
+                            </div>
+                           
+                        }
+                        else
+                        {
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="welcome-inner" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                                    @if (files != null)
+                        {
+                                        <img src="@files.Url" class="img-fluid" alt="@files.Description" />
+                                    }
+                                    else
+                                    {
+                                        <img src="http://via.placeholder.com/430x250" class="img-fluid" alt="" />
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                <div class="welcome-inner">
+                                    @Html.Raw(Model.Content)
+                                </div>
+                            </div>
+                        }
+                    </div>
+                            }
+                        }
+                        }
+                    </div>
+</div>
+
+

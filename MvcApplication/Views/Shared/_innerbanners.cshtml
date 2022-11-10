@@ -1,0 +1,55 @@
+﻿@model Vidyanjali.Areas.Admin.Models.Topic.WebPage
+
+
+@if (Model.ReferenceCode == "AimsandEthos11")
+{
+    <img src="/content/public/images/Vidyanjali_Top-9.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "TheCampus12")
+{
+    <img src="/content/public/images/Vidyanjali_Top-4.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "OurTeam13" ||Model.ReferenceCode== "Impact8"|| Model.ReferenceCode == "AlliancesandAffiliations16" || Model.ReferenceCode == "Gallery24"||Model.ReferenceCode== "Blogs40")
+{
+    <img src="/content/public/images/Vidyanjali_Top.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "Management14")
+{
+    <img src="/content/public/images/Vidyanjali_Top-15.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "VidyanjalisAwardsAndRecognitions15" ||Model.ReferenceCode== "Careers44"|| Model.ReferenceCode == "Scholarships28" || Model.ReferenceCode == "Mentorship23" || Model.ReferenceCode == "EmotionalCounselling22" || Model.ReferenceCode == "SpotLight18" || Model.ReferenceCode == "ParentEngagementConference19" || Model.ReferenceCode == "ParentEmpowrementDay20")
+{
+    <img src="/content/public/images/Inner_Page_Banner.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "LearningSupport21")
+{
+    <img src="/content/public/images/Vidyanjali_Top-11.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "AdmissionEnquiry26" || Model.ReferenceCode == "CBSEItoVIII34")
+{
+    <img src="/content/public/images/Vidyanjali_Top-6.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "PreprimaryMontessori31")
+{
+    <img src="/content/public/images/Vidyanjali_Top-14.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "PrimaryMontessori32")
+{
+    <img src="/content/public/images/Vidyanjali_Top-13.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "CoCurricular36")
+{
+    <img src="/content/public/images/PROGRAMMES_Top.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "ExtraCurricular37")
+{
+    <img src="/content/public/images/Vidyanjali_Top-7.webp" class="img-fluid" alt="@Model.Heading">
+}
+else if (Model.ReferenceCode == "UniquelyVidyanjali38" ||Model.ReferenceCode== "ExamResults39" ||Model.ReferenceCode== "Testimonials41")
+{
+    <img src="/content/public/images/Vidyanjali_Top-5.webp" class="img-fluid" alt="@Model.Heading">
+}
+else
+{
+    <img src="/content/public/images/Vidyanjali_Top-1.webp" class="img-fluid" alt="@Model.Heading">
+}

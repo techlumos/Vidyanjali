@@ -1,0 +1,166 @@
+﻿@model Vidyanjali.Areas.Admin.Models.Topic.Admission
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-cs-12">
+    @using (Html.BeginForm("AdmissionEnquiry", "Home", FormMethod.Post, new { model = this.Model, @id = "contactForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="card-body enq-frm">
+            <h3 class="text-center">Admission Enquiry for year 2022-23</h3>
+            <div class="row mt-4">
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-graduate"></i></span>
+                        </div>
+                        @Html.TextBoxFor(model => model.StudentName, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Student Name" }, { "class", "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StudentName)
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    Gender
+                    <div class="d-flex flex-row justify-content-start">
+                        <div class="p-2">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="male" value="Male" name="Gender" class="custom-control-input">
+                                <label class="custom-control-label" for="male">Male</label>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="female" value="Female" name="Gender" class="custom-control-input">
+                                <label class="custom-control-label" for="female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                        </div>
+                        @Html.TextBoxFor(model => model.FatherName, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Father Name" }, { "class", "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FatherName)
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                        </div>
+                        @Html.TextBoxFor(model => model.MotherName, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Mother Name" }, { "class", "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MotherName)
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
+                        </div>
+                        @Html.TextBoxFor(model => model.DOB, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Date Of Birth" }, { "class", "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DOB)
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    @*@Html.DropDownList("Class", new List<SelectListItem>
+                        {
+                           new SelectListItem{ Text="Select Class", Value = "Select Class" },
+                           new SelectListItem{ Text="Pre-Primary Montessori-1", Value = "Pre-Primary Montessori-1" },
+                           new SelectListItem{ Text="Pre-Primary Montessori-2", Value = "Pre-Primary Montessori-2" },
+                           new SelectListItem{ Text="Pre-Primary Montessori-3", Value = "Pre-Primary Montessori-3" },
+                           new SelectListItem{ Text="Prep_II", Value = "Prep_II" },
+                           new SelectListItem{ Text="Prep_III", Value = "Prep_III" },
+                           new SelectListItem{ Text="1st Std. Montessori", Value = "1st Std. Montessori" },
+                           new SelectListItem{ Text="2nd Std. Montessori", Value = "2nd Std. Montessori" },
+                           new SelectListItem{ Text="3rd Std. Montessori", Value = "3rd Std. Montessori" },
+                           new SelectListItem{ Text="1 CBSE", Value = "1 CBSE" },
+                           new SelectListItem{ Text="2", Value = "2" },
+                        }, new { @class = "custom-select" })*@
+                    <select id="classes_select" class="custom-select" name="Class">
+                        <option value="0">Select Class</option>
+                        <option value="Pre-Primary Montessori-1">Pre-Primary Montessori-1</option>
+                        <option value="Pre-Primary Montessori-2">Pre-Primary Montessori-2</option>
+                        <option value="Pre-Primary Montessori-3">Pre-Primary Montessori-3</option>
+                        <option value="Prep_II">Prep_II</option>
+                        <option value="Prep_III">Prep_III</option>
+                        <option value="1st Std. Montessori">1st Std. Montessori</option>
+                        <option value="2nd Std. Montessori">2nd Std. Montessori</option>
+                        <option value="3rd Std. Montessori">3rd Std. Montessori</option>
+                        <option value="1 CBSE">1 CBSE</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-mobile-alt"></i></span>
+                        </div>
+                        @Html.TextBoxFor(model => model.Phone, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "Phone Number" }, { "class", "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Phone)
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
+                        </div>
+                        @Html.TextBoxFor(model => model.Email, new Dictionary<string, object> { { "maxlength", "100" }, { "placeholder", "email ID" }, { "class", "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="how_know_school">How did you know about our school?</label>
+                        @*@Html.DropDownList("Class", new List<SelectListItem>
+                            {
+                               new SelectListItem{ Text="Select Class", Value = "Select Class" },
+                               new SelectListItem{ Text="Staff Reference", Value = "Staff Reference" },
+                               new SelectListItem{ Text="Parent Reference", Value = "Parent Reference" },
+                               new SelectListItem{ Text="Alumni", Value = "Alumni" },
+                               new SelectListItem{ Text="Website", Value = "Website" },
+                               new SelectListItem{ Text="Social Media", Value = "Social Media" },
+                               new SelectListItem{ Text="Word of mouth", Value = "Word of mouth" },
+                               new SelectListItem{ Text="Same Locality", Value = "Same Locality" },
+                               new SelectListItem{ Text="Sibling studying", Value = "Sibling studying" },
+                               new SelectListItem{ Text="Trustee Reference", Value = "Trustee Reference" },
+                               new SelectListItem{ Text="Others", Value = "Others - Please specify" },
+
+                            }, new { @class = "form-control select2-hidden-accessible" })*@
+                        <select class="form-control select2-hidden-accessible" id="select_how_know_school" data-select2-id="select_how_know_school" tabindex="-1" aria-hidden="true" name="Aboutus">
+                            <option value="-1" data-select2-id="2">Select an option</option>
+                            <option value="Staff Reference">Staff Reference</option>
+                            <option value="Parent Reference">Parent Reference</option>
+                            <option value="Alumni">Alumni</option>
+                            <option value="Website">Website</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Word of mouth">Word of mouth</option>
+                            <option value="Same Locality">Same Locality</option>
+                            <option value="Sibling studying">Sibling studying</option>
+                            <option value="Trustee Reference">Trustee Reference</option>
+                            <option value="Others">Others - Please specify</option>
+                        </select>
+                        @Html.TextAreaFor(model => model.Message, new Dictionary<string, object> { { "id", "how_know_school" }, { "rows", "3" }, { "placeholder", "Message" }, { "class", "form-control mt-4 hidden" } })
+                        @Html.ValidationMessageFor(model => model.Message)
+                    </div>
+                </div>
+            </div>
+            <div class="editor-field" style="color:red;">
+                @TempData["Message"]
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" required>
+                <label for="vehicle1"> YES, I have read and agree to the privacy policy, and herewith share my details to be contactedm by the school.</label>
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-success" id="submit_enq_form" />
+            </div>
+        </div>
+                }
+            </div>

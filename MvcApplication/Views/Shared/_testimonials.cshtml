@@ -1,0 +1,21 @@
+﻿@model Vidyanjali.Areas.Admin.Models.Topic.Testimonials
+@using Vidyanjali.Models
+@{
+    CoreContext db = new CoreContext();
+    var testimonials = db.Testimonials.Where(t => t.IsPublished).ToList();
+}
+@foreach (var testimonial in testimonials)
+{
+    var file = new Vidyanjali.Areas.FileManagement.Models.FileRepository().GetImages("TestimonialImage", "Testimonial", testimonial.Id).FirstOrDefault();
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="slide-image" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
+            <img src="@file.Url" class="img-fluid" alt="@file.Description">
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div class="text">
+            <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">@testimonial.Name</h2>
+           @Html.Raw(testimonial.Description)
+        </div>
+    </div>
+}

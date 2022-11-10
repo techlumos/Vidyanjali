@@ -1,0 +1,23 @@
+﻿@model Vidyanjali.Areas.Admin.Models.Topic.FAQ
+@using Vidyanjali.Models
+@{
+    CoreContext db = new CoreContext();
+    var faqs = db.FAQs.Where(t => t.IsPublished).OrderBy(f=>f.Priority).ToList();
+}
+<div class="col-lg-12 mx-auto">
+    <div id="accordionExample" class="accordion shadow">
+        @foreach(var item in faqs)
+        {
+            <div class="card" id="faq-card" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1400">
+                <div id= @("heading" + item.Id) class="card-header bg-#2b2f6b">
+                    <h6><a href="#" data-toggle="collapse" data-target=@("#collapse"+item.Id) aria-expanded="false" aria-controls=@("collapse"+item.Id) class="d-block position-relative collapsed collapsible-link py-2">@item.Heading</a></h6>
+                </div>
+                <div id=@("collapse"+ item.Id) aria-labelledby=@("heading"+item.Id) data-parent="#accordionExample" class="collapse">
+                    <div class="card-body p-5">
+                        @Html.Raw(item.Content)
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

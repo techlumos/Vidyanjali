@@ -1,0 +1,445 @@
+﻿@using Vidyanjali.Models
+@{
+    Layout = null;
+    CoreContext db = new CoreContext();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Vidyanjali</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" media="screen">
+    <link rel="stylesheet" href="https://vadikom.github.io/smartmenus/src/css/sm-core-css.css">
+    <link rel="stylesheet" type="text/css" href="/Content/Public/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/Content/Public/css/sm-core-css.css">
+    <link rel="stylesheet" type="text/css" href="/Content/Public/css/custom.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="logo">
+            <img src="/content/public/images/Vidyanjali_Logo.webp" class="img-fluid" alt="logo">
+        </div>
+        <div class="logo-2-home">
+            <img src="/content/public/images/30_Years_Logo.webp" class="img-fluid" alt="logo">
+        </div>
+    </div>
+
+    @{Html.RenderPartial("_HeaderStatic");}
+    <div class="modal fade" id="overlay">
+        <div class="modal-dialog">
+            <div class="modal-body popup">
+                <img src="/content/public/images/We are Hiring Flyer.jpg" alt="popup" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid car-head-back background m-0 p-0">
+        @{Html.RenderPartial("_BannerSection");}
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="intro">
+                        <h1 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">INTRODUCTION</h1>
+                        <p data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1500">The foundation to Vidyanjali Academy was laid<br> in the year 1992, nearly three decades ago by<br> Sri Ramaiah Reddy Educational Trust.</p>
+                        <p data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1500">The purpose of starting this school was to provide holistic learning to the students, resulting in an impact of moulding over 100,000 students!</p>
+                    </div>
+                    <div class="more-1" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                        <a href="/Pages/Directors-Welcome">Learn More <img src="/content/public/images/More-1.webp" class="img-fluid" alt="more"></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="intro-video" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
+                        <video width="545" controls>
+                            <source src="/content/public/Videos/V_Vidyanjali Academy for Learning.mp4" type="video/mp4">
+                        </video>
+                        <p>Vidyanjali at a Glance</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="video" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
+                        <video width="545" controls>
+                            <source src="/content/public/Videos/V_Montessori Environment.mp4" type="video/mp4">
+                        </video>
+                        <p>Montessori Video</p>
+                    </div>
+                </div>
+                <div class="disclosure">
+                    <a href="/Pages/Mandatory-Public-Disclosure">
+                        <p id="closure" data-aos="zoom-out-right" data-aos-easing="linear" data-aos-duration="1000">Mandatory Public Disclosure</p><span class="more">Read More</span><img src="/content/public/images/More-1.webp" class="img-fluid" alt="more">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="cir-box" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+            <h1>CURRICULUM</h1>
+        </div>
+        <div class="row">
+            <div class="col col1">
+                <div class="box" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
+                    <a href="/Pages/Preprimary-Montessori">
+                        <div class="bck-lyr">
+                            <div class="box-img">
+                                <img src="/content/public/images/Pre-primary Montessori.webp" class="img-fluid" alt="primary" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">
+                            </div>
+                            <h2 id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">PRE-PRIMARY MONTESSORI</h2>
+                            <p id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">In Montessori Pre-Primary, children learn through experience by performing various activities using their hands and senses.</p>
+                            <div class="more-2" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Preprimary-Montessori"><img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col col2">
+                <div class="box" id="bck-img-1" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1300">
+                    <a href="pre-primary.html">
+                        <div class="bck-lyr">
+                            <div class="box-img">
+                                <img src="/content/public/images/Primary Montessori.webp" class="img-fluid" alt="primary" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">
+                            </div>
+                            <h2 id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">PRIMARY MONTESSORI</h2>
+                            <p id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">The Montessori Primary curriculum is based on building up to the experience gained by learners during the first six years, when they gained... </p>
+                            <div class="more-2" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Primary-Montessori"><img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col col3">
+                <div class="box" id="bck-img-2" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1600">
+                    <a href="pre-primary.html">
+                        <div class="bck-lyr">
+                            <div class="box-img">
+                                <img src="/content/public/images/Prep II & III.webp" class="img-fluid" alt="primary" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">
+                            </div>
+                            <h2 id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">PREP II & III</h2>
+                            <p id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">The Prep II and III course curriculum are specifically designed and developed to make children aware about the basic concepts in different subjects like... </p>
+                            <div class="more-2" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Prep-II-and-III"><img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col col4">
+                <div class="box" id="bck-img-3" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1900">
+                    <a href="pre-primary.html">
+                        <div class="bck-lyr">
+                            <div class="box-img">
+                                <img src="/content/public/images/CBSE_I_to_VIII.webp" class="img-fluid" alt="primary" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">
+                            </div>
+                            <h2 id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">CBSE I to VIII</h2>
+                            <p id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">The curriculum from CBSE Class I to VIII is followed as per the latest guidelines of the Central Board of Secondary Education (CBSE).</p>
+                            <div class="more-2" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/CBSE-I-to-VIII"><img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col col5">
+                <div class="box" id="bck-img-4" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="2200">
+                    <a href="pre-primary.html">
+                        <div class="bck-lyr">
+                            <div class="box-img">
+                                <img src="/content/public/images/CBSEIX_and_X.webp" class="img-fluid" alt="primary" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">
+                            </div>
+                            <h2 id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">CBSE IX & X</h2>
+                            <p id="scale" data-aos="fade-down-right" data-aos-easing="linear" data-aos-duration="1000">The CBSE IX and X is an integrated course, where the subjects selected by students in Class IX will be continued in Class X as well.</p>
+                            <div class="more-2" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/CBSE-IX-to-X"><img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid result">
+        <div class="container">
+            <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">2021 X EXAM RESULTS</h1>
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <div class="result-inner">
+                        <img src="/content/public/images/Results .webp" class="img-fluid" alt="results" data-aos="flip-down" data-aos-easing="linear" data-aos-duration="1400">
+                        <h1 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">68%</h1>
+                        <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Results</p>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <div class="result-inner">
+                        <img src="/content/public/images/First Class.webp" class="img-fluid" alt="results" data-aos="flip-down" data-aos-easing="linear" data-aos-duration="1400">
+                        <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">99%</h1>
+                        <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">First Class</p>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <div class="result-inner">
+                        <img src="/content/public/images/Distinction.webp" class="img-fluid" alt="results" data-aos="flip-down" data-aos-easing="linear" data-aos-duration="1400">
+                        <h1 data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">100%</h1>
+                        <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Distinction</p>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+            </div>
+            <div class="more-3" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1300">
+                <a href="/Pages/Exam-Results">Learn More <img src="/content/public/images/More-1.webp" class="img-fluid" alt="more"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container key-diff">
+            <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2000">KEY DIFFERENTIATORS</h1>
+            <div class="key-head">
+                <div class="row">
+                    <div class="key-inner col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="key" data-aos="fade-down" data-aos-easing="linear">
+                            <a href="/Pages/Uniquely-Vidyanjali">
+                                <img src="/content/public/images/Temp/Tight Knit Community.webp" class="img-fluid" id="key-img" alt="Tight">
+                                <div class="centered">
+                                    <p data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="2300">Tight Knit Community</p>
+                                </div>
+                            </a>
+                            <div class="more-4" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Uniquely-Vidyanjali"> <img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-inner col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="key" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2500">
+                            <a href="/Pages/Uniquely-Vidyanjali">
+                                <img src="/content/public/images/Temp/Holistic_Character_Development.webp" class="img-fluid" id="key-img" alt="Tight">
+                                <div class="centered">
+                                    <p data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="1000">Holistic Character Development</p>
+                                </div>
+                            </a>
+                            <div class="more-4" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Uniquely-Vidyanjali"> <img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-inner col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="key" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2800">
+                            <a href="/Pages/Uniquely-Vidyanjali">
+                                <img src="/content/public/images/Temp/Exceptional Educators.webp" class="img-fluid" id="key-img" alt="Tight">
+                                <div class="centered">
+                                    <p data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="1000">Exceptional Educators</p>
+                                </div>
+                            </a>
+                            <div class="more-4" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Uniquely-Vidyanjali"> <img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row key-2">
+                    <div class="key-inner col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="key" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1600">
+                            <a href="/Pages/Uniquely-Vidyanjali">
+                                <img src="/content/public/images/Safety.webp" class="img-fluid" alt="Tight">
+                                <div class="centered">
+                                    <p data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="1000">Safety</p>
+                                </div>
+                            </a>
+                            <div class="more-4" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Uniquely-Vidyanjali"> <img src="/content/public/images/More-2.webp" class="img-fluid" id="key-img" alt="more"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-inner col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="key" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1700">
+                            <a href="/Pages/Uniquely-Vidyanjali">
+                                <img src="/content/public/images/Temp/Academic Excellence-H.webp" class="img-fluid" id="key-img" alt="Tight">
+                                <div class="centered">
+                                    <p data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="1000">Academic Excellence</p>
+                                </div>
+                            </a>
+                            <div class="more-4" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Uniquely-Vidyanjali"> <img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-inner col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="key" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1800">
+                            <a href="/Pages/Uniquely-Vidyanjali">
+                                <img src="/content/public/images/Temp/Growth Mind Set.webp" class="img-fluid" id="key-img" alt="Tight">
+                                <div class="centered">
+                                    <p data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="1000">Growth Mind Set</p>
+                                </div>
+                            </a>
+                            <div class="more-4" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+                                <a href="/Pages/Uniquely-Vidyanjali"> <img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid faculty-1">
+        <div class="container">
+            <div class="faculty" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+                <h1>Faculty Insight</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="faculty-inner">
+                        <img src="/content/public/images/Temp/Masters’ Degree.webp" class="img-fluid" alt="results" data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="1500">
+                        <h1 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">60%</h1>
+                        <p data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">Teachers have Masters Degree</p>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="faculty-inner">
+                        <img src="/content/public/images/Temp/Teachers_are_Trained.webp" class="img-fluid" alt="results" data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="1500">
+                        <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1800">81%</h1>
+                        <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1800">Teachers are Trained</p>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="faculty-inner">
+                        <img src="/content/public/images/Temp/Teaching experience.webp" class="img-fluid" alt="results" data-aos="zoom-out" data-aos-easing="linear" data-aos-duration="1500">
+                        <h1 data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2100">44%</h1>
+                        <p data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2100">Teachers have more than 10% of Teaching experience</p>
+                    </div>
+                </div>
+
+            </div>
+            <p class="data" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">Career options at Vidyanjali is to continuously enhance the knowledge, skills of teachers through dedicated training sessions. The faculty is highly motivated and focussed towards the holistic development of each and every student.</p>
+            <div class="more-5" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1300">
+                <a href="/Pages/Our-Team">Learn More <img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    <div class="hire">
+                        <p>Vidyanajli is currently recruiting teachers.</p>
+                        <p>If you are interested <a href="/Pages/Contact-Us">apply now</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    <div class="tchr-trng">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="tt-img">
+                                    <a href="http://www.vmti.in/"><img src="/content/public/images/Logo-v.webp" class="img-fluid" alt="results"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <a href="http://www.vmti.in/">
+                                    <div class="tt-info">
+                                        <h5>Vidyanjali Montessori Training Institute</h5>
+                                        <p>Awakening the Teacher within</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid m-0 p-0 scroll">
+        <div class="container">
+            <div class="row">
+                <div class="roll">
+                    <p><a href="process.html">Admission Process at Vidyanjali</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="spotlight">
+                        <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">TEACHER SPOTLIGHT</h1>
+                        <img src="/content/public/images/Staff_spotlight-3-home.webp" class="img-fluid" alt="spotlight" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
+                        <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">A teacher is the one who not only incorporates all his beliefs in his everyday life but sees that his students are inspired to do that too.</p>
+                        <div class="more-6" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
+                            <a href="/Pages/Spot-Light">Learn More <img src="/content/public/images/More-1.webp" class="img-fluid" alt="more"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="spotlight">
+                        <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">STUDENT SPOTLIGHT</h1>
+                        <img src="/content/public/images/Student spotlight-home.webp" class="img-fluid" alt="spotlight" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
+                        <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">An active, young enthusiast of class VIII A in Vidyanjali whose interests range from classical dance to cycling. Ms. Bhanu’s academic achievements...</p>
+                        <div class="more-6" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1500">
+                            <a href="/Pages/Spot-Light">Learn More <img src="/content/public/images/More-1.webp" class="img-fluid" alt="more"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="outer-container test-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="test">
+                        <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">TESTIMONIALS</h1>
+                        @{Html.RenderPartial("/Views/Shared/_homeTestimonials.cshtml", new Vidyanjali.Areas.Admin.Models.Topic.Testimonials()); }
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="alliances">
+                        <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">ALLIANCES & AFFILIATIONS</h1>
+                        <img src="/content/public/images/Temp/Alliances_Affiliations.webp" class="img-fluid" alt="alliances" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                        <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1800">Vidyanjali is affiliated to Central Board of Secondary Education since 2008.The Pre-primary Montessori wing is affiliated with IIMS since 2011 and the Primary wing affiliated to IMTC from 2020 onwards.</p>
+                    </div>
+                    <div class="more-7" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="2000">
+                        <a href="/Pages/Alliances-and-Affiliations"> Learn More <img src="/content/public/images/More-2.webp" class="img-fluid" alt="more"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="container-fluid">
+            <div class="container">
+                <div class="panoroma">
+                    <h1 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">FACILITIES AT VIDYANJALI - EXPLORE IN 360 DEGREE</h1>
+                    <div class="elementor-element elementor-element-5f43362 elementor-widget elementor-widget-html" data-id="5f43362" data-element_type="widget" data-widget_type="html.default">
+                        <div class="elementor-widget-container">
+                            <iframe loading="lazy" id="/tours/-_r-h5xayk" allow="camera;microphone;vr;accelerometer;gyroscope;fullscreen" allowfullscreen="" frameborder="0" width="100%" height="500" src="https://app.cloudpano.com/tours/-_r-h5xayk"></iframe>
+                        </div>
+                    </div>
+                    <p data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">The school campus houses the admin block, school playground, and the auditorium. It is designed incorporating the latest thinking concerning CBSE and Montessori school requirements. The school provides world-class facilities which are scientifically and aesthetically designed to suit the students’ needs at various levels.</p>
+                </div>
+            </div>
+        </div>*@
+
+    @{Html.RenderPartial("_Footer");}
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/content/public/js/custom.js"></script>
+
+</body>
+</html>

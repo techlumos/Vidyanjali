@@ -1,0 +1,60 @@
+﻿@{
+    var files = new Vidyanjali.Areas.FileManagement.Models.FileRepository().GetImages("Home", "Banner", 1);
+    var cunt = files.Count();
+    var count = false;
+    var active = false;
+} 
+<div id="carousel" class="carousel slide" data-ride="carousel">
+    <a href="#" class="scroll-down" address="true"></a>
+    <ol class="carousel-indicators" id="indi-first">
+        @for (var i = 0; i < cunt; i++)
+        {
+            if (active == false)
+            {
+                <li data-target="#carousel" data-slide-to="@i" class="active"></li>
+                active = true;
+            }
+            else
+            {
+                <li data-target="#carousel" data-slide-to="@i"></li>
+            }
+        }
+    </ol>
+        <div class="carousel-inner" role="listbox">
+            @foreach (var allFiles in files)
+            {
+                if (count == false && allFiles.IsDefault)
+                {
+                    <div class="carousel-item active">
+                        <img src="@allFiles.Url" alt="banner1" style="@allFiles.Width" />
+                        <div class="bottom-left fadeInAnimation" id="banner-text">
+                            @*<h3>@allFiles.Description</h3>*@
+                         </div>
+                    </div>
+                    count = true;
+                    cunt++;
+                }
+                else if (count == true)
+                {
+                    <div class="carousel-item">
+                        @if (allFiles.FileName == "Vidyanjali_Banner-5.webp")
+                        {
+                            <a href="/Pages/Impact"><img src="@allFiles.Url" alt="banner1" width="100%" /></a>
+                        }
+                        else if (allFiles.FileName == "Vidyanjali_Banner-2.webp")
+                        {
+                            <a href="/Pages/Primary-Montessori"><img src="@allFiles.Url" alt="banner1" width="100%" /></a>
+                        }
+                        else
+                        {
+                            <img src="@allFiles.Url" alt="banner1" style="@allFiles.Width" />
+                        }
+                        <div class="bottom-left fadeInAnimation" if="banner-text">
+                            @*<h3>@allFiles.Description</h3>*@
+                        </div>
+                    </div>
+                    cunt++;
+                }
+             }
+        </div>
+</div>
